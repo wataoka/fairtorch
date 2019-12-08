@@ -14,11 +14,11 @@ class German(Dataset):
     def __init__(self, data_numeric_path, transform=None, protected_attribute_names=['sex'], sensitive_attribute_path=GERMAN_SEX_PATH, preprocess='min-max'):
         self.transform = transform
         self.data_names = ['status_of_credit', 'duration_in_month', 'credit_history',
-                         'credit_amout', 'savings', 'job', 'feature7', 'housing',
-                         'property', 'age', 'plans', 'feature12', 'feature13',
-                         'feature14', 'feature15', 'feature16', 'feature17',
-                         'feature18', 'feature19', 'feature20', 'feature21',
-                         'feature22', 'feature23', 'feature24']
+                           'credit_amout', 'savings', 'job', 'feature7', 'housing',
+                           'property', 'age', 'plans', 'feature12', 'feature13',
+                           'feature14', 'feature15', 'feature16', 'feature17',
+                           'feature18', 'feature19', 'feature20', 'feature21',
+                           'feature22', 'feature23', 'feature24']
         self.label_names = ['label']
         self.df = pd.read_csv(data_numeric_path, delimiter='\s+', names=(self.data_names + self.label_names))
         self.data = self.df[self.data_names].values
