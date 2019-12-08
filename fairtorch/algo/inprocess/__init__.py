@@ -1,1 +1,2 @@
 from .adversarial_debiasing import Classifier, Adversary
+from .onenet_adversarial_fairness import OnenetAdversarialFariness
