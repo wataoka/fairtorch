@@ -21,9 +21,9 @@ class German(Dataset):
                            'feature22', 'feature23', 'feature24']
         self.label_names = ['label']
         self.df = pd.read_csv(data_numeric_path, delimiter='\s+', names=(self.data_names + self.label_names))
-        self.data = self.df[self.data_names].values
-        self.label = self.df[self.label_names].values
-        self.sensitive_attribute = np.array(np.load(sensitive_attribute_path))
+        self.data = self.df[self.data_names].values.astype('float32')
+        self.label = self.df[self.label_names].values.astype('float32')
+        self.sensitive_attribute = np.array(np.load(sensitive_attribute_path)).astype('float32')
         if preprocess=='min-max':
             self.data = self.min_max(self.data, axis=1)
             self.label = self.min_max(self.label, axis=0)
